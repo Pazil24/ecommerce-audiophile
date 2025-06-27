@@ -8,7 +8,7 @@ const Checkout = () => {
   const { items, totalPrice, clearCart } = useCart();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("eMoney");
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,9 +22,9 @@ const Checkout = () => {
   });
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
       minimumFractionDigits: 0,
     }).format(price);
   };
@@ -35,9 +35,9 @@ const Checkout = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -58,8 +58,16 @@ const Checkout = () => {
         <div className="bg-white rounded-lg p-8 max-w-md w-full">
           <div className="mb-6">
             <div className="w-16 h-16 bg-[#D87D4A] rounded-full flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              <svg
+                className="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <h2 className="text-2xl font-bold text-black mb-4">
@@ -69,7 +77,7 @@ const Checkout = () => {
               You will receive an email confirmation shortly.
             </p>
           </div>
-          
+
           <div className="bg-gray-100 rounded-lg p-4 mb-6">
             {items.length > 0 && (
               <div className="flex items-center gap-4 mb-4">
@@ -80,19 +88,24 @@ const Checkout = () => {
                 />
                 <div className="flex-1">
                   <h4 className="font-bold text-sm">
-                    {items[0].name.replace(' Headphones', '').replace(' Speaker', '').replace(' Earphones', '')}
+                    {items[0].name
+                      .replace(" Headphones", "")
+                      .replace(" Speaker", "")
+                      .replace(" Earphones", "")}
                   </h4>
                   <p className="text-gray-500 text-sm">
                     {formatPrice(items[0].price)}
                   </p>
                 </div>
-                <span className="text-gray-500 text-sm">x{items[0].quantity}</span>
+                <span className="text-gray-500 text-sm">
+                  x{items[0].quantity}
+                </span>
               </div>
             )}
             {items.length > 1 && (
               <div className="border-t pt-4">
                 <p className="text-gray-500 text-sm">
-                  and {items.length - 1} other item{items.length > 2 ? 's' : ''}
+                  and {items.length - 1} other item{items.length > 2 ? "s" : ""}
                 </p>
               </div>
             )}
@@ -105,7 +118,7 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          
+
           <Button
             variant="primary"
             className="w-full"
@@ -120,26 +133,26 @@ const Checkout = () => {
 
   return (
     <>
-      <Navigation 
-        className="text-white" 
-        style={{ backgroundColor: 'black' }}
+      <Navigation
+        className="text-white"
+        style={{ backgroundColor: "black" }}
         showBorder={false}
       />
-      
+
       <div className="bg-gray-50 min-h-screen pt-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-20 py-8">
-          <button 
+          <button
             onClick={() => window.history.back()}
             className="text-gray-500 hover:text-[#D87D4A] transition-colors mb-8"
           >
             Go Back
           </button>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Checkout Form */}
             <div className="bg-white rounded-lg p-8">
               <h1 className="text-3xl font-bold text-black mb-8">CHECKOUT</h1>
-              
+
               <form onSubmit={handleSubmit}>
                 {/* Billing Details */}
                 <div className="mb-8">
@@ -191,7 +204,7 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Shipping Info */}
                 <div className="mb-8">
                   <h2 className="text-[#D87D4A] text-sm font-bold tracking-wide mb-4">
@@ -256,7 +269,7 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Payment Details */}
                 <div className="mb-8">
                   <h2 className="text-[#D87D4A] text-sm font-bold tracking-wide mb-4">
@@ -293,7 +306,7 @@ const Checkout = () => {
                       </label>
                     </div>
                   </div>
-                  
+
                   {paymentMethod === "eMoney" && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                       <div>
@@ -326,7 +339,7 @@ const Checkout = () => {
                       </div>
                     </div>
                   )}
-                  
+
                   {paymentMethod === "cash" && (
                     <div className="flex items-center gap-4 mt-4 p-4 bg-gray-100 rounded-lg">
                       <img
@@ -335,18 +348,21 @@ const Checkout = () => {
                         className="w-12 h-12"
                       />
                       <p className="text-gray-500 text-sm">
-                        The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+                        The 'Cash on Delivery' option enables you to pay in cash
+                        when our delivery courier arrives at your residence.
+                        Just make sure your address is correct so that your
+                        order will not be cancelled.
                       </p>
                     </div>
                   )}
                 </div>
               </form>
             </div>
-            
+
             {/* Order Summary */}
             <div className="bg-white rounded-lg p-8">
               <h2 className="text-lg font-bold text-black mb-6">SUMMARY</h2>
-              
+
               <div className="space-y-6 mb-6">
                 {items.map((item) => (
                   <div key={item.id} className="flex items-center gap-4">
@@ -357,17 +373,22 @@ const Checkout = () => {
                     />
                     <div className="flex-1">
                       <h3 className="font-bold text-black text-sm">
-                        {item.name.replace(' Headphones', '').replace(' Speaker', '').replace(' Earphones', '')}
+                        {item.name
+                          .replace(" Headphones", "")
+                          .replace(" Speaker", "")
+                          .replace(" Earphones", "")}
                       </h3>
                       <p className="text-gray-500 text-sm">
                         {formatPrice(item.price)}
                       </p>
                     </div>
-                    <span className="text-gray-500 text-sm">x{item.quantity}</span>
+                    <span className="text-gray-500 text-sm">
+                      x{item.quantity}
+                    </span>
                   </div>
                 ))}
               </div>
-              
+
               <div className="space-y-2 mb-6">
                 <div className="flex justify-between">
                   <span className="text-gray-500">TOTAL</span>
@@ -388,7 +409,7 @@ const Checkout = () => {
                   </span>
                 </div>
               </div>
-              
+
               <Button
                 variant="primary"
                 className="w-full"
@@ -400,7 +421,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </>
   );

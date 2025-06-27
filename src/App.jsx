@@ -33,8 +33,14 @@ export default function App() {
               element={<XX99MarkOneProduct />}
             />
             <Route path="/product/xx59-headphones" element={<XX59Product />} />
-            <Route path="/product/zx9-speaker" element={<ZX9SpeakerProduct />} />
-            <Route path="/product/zx7-speaker" element={<ZX7SpeakerProduct />} />
+            <Route
+              path="/product/zx9-speaker"
+              element={<ZX9SpeakerProduct />}
+            />
+            <Route
+              path="/product/zx7-speaker"
+              element={<ZX7SpeakerProduct />}
+            />
             <Route
               path="/product/yx1-earphones"
               element={<YX1EarphonesProduct />}

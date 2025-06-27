@@ -87,7 +87,11 @@ const ProductDetail = ({ product }) => {
                   +
                 </button>
               </div>
-              <Button variant="primary" className="px-8" onClick={handleAddToCart}>
+              <Button
+                variant="primary"
+                className="px-8"
+                onClick={handleAddToCart}
+              >
                 Add to Cart
               </Button>
             </div>
@@ -128,28 +132,34 @@ const ProductDetail = ({ product }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="md:col-span-1 space-y-6">
               <img
-                src={product.gallery?.first?.desktop?.replace(
-                  "./assets",
-                  "/assets"
-                ) || ""}
+                src={
+                  product.gallery?.first?.desktop?.replace(
+                    "./assets",
+                    "/assets"
+                  ) || ""
+                }
                 alt="Product gallery 1"
                 className="w-full h-auto rounded-lg"
               />
               <img
-                src={product.gallery?.second?.desktop?.replace(
-                  "./assets",
-                  "/assets"
-                ) || ""}
+                src={
+                  product.gallery?.second?.desktop?.replace(
+                    "./assets",
+                    "/assets"
+                  ) || ""
+                }
                 alt="Product gallery 2"
                 className="w-full h-auto rounded-lg"
               />
             </div>
             <div className="md:col-span-1 lg:col-span-2">
               <img
-                src={product.gallery?.third?.desktop?.replace(
-                  "./assets",
-                  "/assets"
-                ) || ""}
+                src={
+                  product.gallery?.third?.desktop?.replace(
+                    "./assets",
+                    "/assets"
+                  ) || ""
+                }
                 alt="Product gallery 3"
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -166,7 +176,9 @@ const ProductDetail = ({ product }) => {
             {product.others?.map((item, index) => (
               <div key={index} className="text-center space-y-6">
                 <img
-                  src={item.image?.desktop?.replace("./assets", "/assets") || ""}
+                  src={
+                    item.image?.desktop?.replace("./assets", "/assets") || ""
+                  }
                   alt={item.name}
                   className="w-full h-auto rounded-lg"
                 />
