@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import Button from "./Button";
 
 const CartModal = () => {
+  const navigate = useNavigate();
   const {
     items,
     isOpen,
@@ -143,8 +145,7 @@ const CartModal = () => {
               className="w-full"
               onClick={() => {
                 toggleCart();
-                // Navigate to checkout page
-                window.location.href = "/checkout";
+                navigate("/checkout");
               }}
             >
               CHECKOUT

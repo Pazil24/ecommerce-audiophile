@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { useCart } from "../context/CartContext";
 import AddToCartNotification from "./AddToCartNotification";
 
 const ProductDetail = ({ product }) => {
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
   const [showNotification, setShowNotification] = useState(false);
   const { addItem } = useCart();
@@ -191,9 +193,7 @@ const ProductDetail = ({ product }) => {
                 <h3 className="text-xl font-bold text-black">{item.name}</h3>
                 <Button
                   variant="primary"
-                  onClick={() =>
-                    (window.location.href = `/product/${item.slug}`)
-                  }
+                  onClick={() => navigate(`/product/${item.slug}`)}
                 >
                   See Product
                 </Button>

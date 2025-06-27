@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import { useCart } from "../context/CartContext";
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const { items, totalPrice, clearCart } = useCart();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("eMoney");
@@ -49,7 +51,7 @@ const Checkout = () => {
   const handleContinueAndPay = () => {
     clearCart();
     setShowConfirmation(false);
-    window.location.href = "/";
+    navigate("/");
   };
 
   if (showConfirmation) {
