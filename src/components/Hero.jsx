@@ -1,15 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HeroImageDesktop from "../assets/home/desktop/image-hero.jpg";
-import HeroImageTablet from "../assets/home/tablet/image-header.jpg";
-import HeroImageMobile from "../assets/home/mobile/image-header.jpg";
 import Button from "./Button";
 
 const Hero = () => {
   return (
     <div
       className="min-h-[600px] lg:min-h-[700px] bg-cover bg-center relative text-white"
-      style={{ backgroundImage: `url(${HeroImageDesktop})` }}
+      style={{ backgroundImage: `url('/assets/home/desktop/image-hero.jpg')` }}
     >
       {/* Hero Content */}
       <div className="flex items-center min-h-[600px] lg:min-h-[700px]">

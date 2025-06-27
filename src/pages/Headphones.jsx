@@ -15,7 +15,7 @@ const Headphones = () => {
       name: product.name,
       description: product.description,
       price: product.price,
-      image: product.categoryImage.desktop.replace("./assets", "/src/assets"),
+      image: product.categoryImage.desktop.replace("./assets", "/assets"),
       slug: product.slug,
       isNew: product.new,
       reverse: product.id % 2 === 0, // Alternate reverse layout

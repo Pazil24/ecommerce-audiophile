@@ -16,7 +16,7 @@ const FeaturedProducts = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <div className="text-center lg:text-left">
               <img
-                src="/src/assets/home/desktop/image-speaker-zx9.png"
+                src="/assets/home/desktop/image-speaker-zx9.png"
                 alt="ZX9 Speaker"
                 className="w-48 h-64 object-contain mx-auto lg:mx-0"
               />
@@ -48,7 +48,7 @@ const FeaturedProducts = () => {
           className="rounded-lg p-12 lg:p-20 bg-cover bg-center relative"
           style={{
             backgroundImage:
-              "url('/src/assets/home/desktop/image-speaker-zx7.jpg')",
+              "url('/assets/home/desktop/image-speaker-zx7.jpg')",
           }}
         >
           <div className="max-w-md">
@@ -63,7 +63,7 @@ const FeaturedProducts = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="rounded-lg overflow-hidden">
             <img
-              src="/src/assets/home/desktop/image-earphones-yx1.jpg"
+              src="/assets/home/desktop/image-earphones-yx1.jpg"
               alt="YX1 Earphones"
               className="w-full h-80 object-cover"
             />

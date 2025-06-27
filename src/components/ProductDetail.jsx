@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import { useCart } from "../context/CartContext";
 
 const ProductDetail = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
+  const { addItem } = useCart();
 
   // Add safety check for product
   if (!product) {
     return <div>Loading...</div>;
   }
+
+  const handleAddToCart = () => {
+    addItem(product, quantity);
+    // Optional: Show success message or notification
+  };
 
   const handleQuantityChange = (action) => {
     if (action === "increase") {
@@ -42,7 +49,7 @@ const ProductDetail = ({ product }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
           <div className="order-1">
             <img
-              src={product.image?.desktop?.replace("./assets", "/src/assets") || ""}
+              src={product.image?.desktop?.replace("./assets", "/assets") || ""}
               alt={product.name}
               className="w-full h-auto rounded-lg"
             />
@@ -80,7 +87,7 @@ const ProductDetail = ({ product }) => {
                   +
                 </button>
               </div>
-              <Button variant="primary" className="px-8">
+              <Button variant="primary" className="px-8" onClick={handleAddToCart}>
                 Add to Cart
               </Button>
             </div>
@@ -123,7 +130,7 @@ const ProductDetail = ({ product }) => {
               <img
                 src={product.gallery?.first?.desktop?.replace(
                   "./assets",
-                  "/src/assets"
+                  "/assets"
                 ) || ""}
                 alt="Product gallery 1"
                 className="w-full h-auto rounded-lg"
@@ -131,7 +138,7 @@ const ProductDetail = ({ product }) => {
               <img
                 src={product.gallery?.second?.desktop?.replace(
                   "./assets",
-                  "/src/assets"
+                  "/assets"
                 ) || ""}
                 alt="Product gallery 2"
                 className="w-full h-auto rounded-lg"
@@ -141,7 +148,7 @@ const ProductDetail = ({ product }) => {
               <img
                 src={product.gallery?.third?.desktop?.replace(
                   "./assets",
-                  "/src/assets"
+                  "/assets"
                 ) || ""}
                 alt="Product gallery 3"
                 className="w-full h-full object-cover rounded-lg"
@@ -159,7 +166,7 @@ const ProductDetail = ({ product }) => {
             {product.others?.map((item, index) => (
               <div key={index} className="text-center space-y-6">
                 <img
-                  src={item.image?.desktop?.replace("./assets", "/src/assets") || ""}
+                  src={item.image?.desktop?.replace("./assets", "/assets") || ""}
                   alt={item.name}
                   className="w-full h-auto rounded-lg"
                 />
