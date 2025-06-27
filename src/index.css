@@ -1,0 +1,8 @@
+/* Global Styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@import "tailwindcss";
+@plugin "daisyui";
