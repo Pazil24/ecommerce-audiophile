@@ -9,11 +9,7 @@ import About from "../components/About";
 const Home = () => {
   return (
     <>
-      <Navigation
-        className="text-white"
-        style={{ backgroundColor: "black" }}
-        showBorder={true}
-      />
+      <Navigation className="text-white" showBorder={true} />
       <Hero />
       <CategoryCards />
       <FeaturedProducts />

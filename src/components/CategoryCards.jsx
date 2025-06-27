@@ -1,20 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CategoryCards = () => {
   const categories = [
     {
       name: "HEADPHONES",
-      image:
-        "/src/assets/shared/desktop/image-category-thumbnail-headphones.png",
+      image: "/assets/shared/desktop/image-category-thumbnail-headphones.png",
+      route: "/headphones",
     },
     {
       name: "SPEAKERS",
-      image: "/src/assets/shared/desktop/image-category-thumbnail-speakers.png",
+      image: "/assets/shared/desktop/image-category-thumbnail-speakers.png",
+      route: "/speakers",
     },
     {
       name: "EARPHONES",
-      image:
-        "/src/assets/shared/desktop/image-category-thumbnail-earphones.png",
+      image: "/assets/shared/desktop/image-category-thumbnail-earphones.png",
+      route: "/earphones",
     },
   ];
 
@@ -37,8 +39,8 @@ const CategoryCards = () => {
               <h3 className="text-lg font-bold tracking-wider mb-4 mt-8">
                 {category.name}
               </h3>
-              <a
-                href="#"
+              <Link
+                to={category.route}
                 className="inline-flex items-center gap-3 text-sm font-bold text-black opacity-50 hover:text-[#D87D4A] hover:opacity-100 transition-all"
               >
                 SHOP
@@ -50,7 +52,7 @@ const CategoryCards = () => {
                     fill="none"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

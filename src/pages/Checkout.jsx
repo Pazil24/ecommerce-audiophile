@@ -356,6 +356,10 @@ const Checkout = () => {
                     </div>
                   )}
                 </div>
+
+                <Button variant="primary" className="w-full mt-8" type="submit">
+                  CONTINUE & PAY
+                </Button>
               </form>
             </div>
 
@@ -409,14 +413,6 @@ const Checkout = () => {
                   </span>
                 </div>
               </div>
-
-              <Button
-                variant="primary"
-                className="w-full"
-                onClick={handleSubmit}
-              >
-                CONTINUE & PAY
-              </Button>
             </div>
           </div>
         </div>

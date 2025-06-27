@@ -54,6 +54,16 @@ const CartModal = () => {
 
       {/* Cart Modal */}
       <div className="relative bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
+        {/* Go Back Button */}
+        <div className="mb-4">
+          <button
+            onClick={toggleCart}
+            className="text-gray-500 hover:text-[#D87D4A] transition-colors text-sm"
+          >
+            ← Go Back
+          </button>
+        </div>
+
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-bold text-black">
             CART ({items.length})

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { useCart } from "../context/CartContext";
+import AddToCartNotification from "./AddToCartNotification";
 
 const ProductDetail = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
+  const [showNotification, setShowNotification] = useState(false);
   const { addItem } = useCart();
 
   // Add safety check for product
@@ -13,7 +15,11 @@ const ProductDetail = ({ product }) => {
 
   const handleAddToCart = () => {
     addItem(product, quantity);
-    // Optional: Show success message or notification
+    setShowNotification(true);
+    // Auto-hide notification after 3 seconds
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 3000);
   };
 
   const handleQuantityChange = (action) => {
@@ -196,6 +202,13 @@ const ProductDetail = ({ product }) => {
           </div>
         </div>
       </div>
+
+      {/* Add to Cart Notification */}
+      <AddToCartNotification
+        show={showNotification}
+        product={product}
+        onClose={() => setShowNotification(false)}
+      />
     </div>
   );
 };

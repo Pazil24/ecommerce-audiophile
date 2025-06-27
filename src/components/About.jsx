@@ -22,7 +22,7 @@ const About = () => {
           </div>
           <div className="order-1 lg:order-2">
             <img
-              src="/src/assets/shared/desktop/image-best-gear.jpg"
+              src="/assets/shared/desktop/image-best-gear.jpg"
               alt="Person listening to headphones"
               className="w-full h-80 lg:h-96 object-cover rounded-lg"
             />
