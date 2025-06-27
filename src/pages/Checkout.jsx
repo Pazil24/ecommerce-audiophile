@@ -141,29 +141,29 @@ const Checkout = () => {
         showBorder={false}
       />
 
-      <div className="bg-gray-50 min-h-screen pt-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-20 py-8">
+      <div className="bg-gray-50 min-h-screen pt-16 md:pt-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-20 py-6 md:py-8">
           <button
             onClick={() => window.history.back()}
-            className="text-gray-500 hover:text-[#D87D4A] transition-colors mb-8"
+            className="text-gray-500 hover:text-[#D87D4A] transition-colors mb-6 md:mb-8 text-sm md:text-base"
           >
             Go Back
           </button>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Checkout Form */}
-            <div className="bg-white rounded-lg p-8">
-              <h1 className="text-3xl font-bold text-black mb-8">CHECKOUT</h1>
+            <div className="bg-white rounded-lg p-6 md:p-8">
+              <h1 className="text-2xl md:text-3xl font-bold text-black mb-6 md:mb-8">CHECKOUT</h1>
 
               <form onSubmit={handleSubmit}>
                 {/* Billing Details */}
-                <div className="mb-8">
-                  <h2 className="text-[#D87D4A] text-sm font-bold tracking-wide mb-4">
+                <div className="mb-6 md:mb-8">
+                  <h2 className="text-[#D87D4A] text-xs md:text-sm font-bold tracking-wide mb-4">
                     BILLING DETAILS
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-bold text-black mb-2">
+                      <label className="block text-xs md:text-sm font-bold text-black mb-2">
                         Name
                       </label>
                       <input
@@ -171,13 +171,13 @@ const Checkout = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D87D4A]"
+                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D87D4A] text-sm md:text-base"
                         placeholder="Alexei Ward"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-black mb-2">
+                      <label className="block text-xs md:text-sm font-bold text-black mb-2">
                         Email Address
                       </label>
                       <input
@@ -185,13 +185,13 @@ const Checkout = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D87D4A]"
+                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D87D4A] text-sm md:text-base"
                         placeholder="alexei@mail.com"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-bold text-black mb-2">
+                      <label className="block text-xs md:text-sm font-bold text-black mb-2">
                         Phone Number
                       </label>
                       <input
@@ -199,7 +199,7 @@ const Checkout = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D87D4A]"
+                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D87D4A] text-sm md:text-base"
                         placeholder="+1 202-555-0136"
                         required
                       />

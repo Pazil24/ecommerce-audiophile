@@ -6,13 +6,13 @@ const Footer = () => {
       {/* Orange accent line */}
       <div className="h-1 bg-[#D87D4A] w-24 mx-auto"></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-20 py-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-20 py-12 md:py-16">
         {/* Top section - Logo and Navigation */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
-          <div className="text-2xl font-bold mb-8 lg:mb-0">audiophile</div>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12">
+          <div className="text-2xl font-bold mb-6 md:mb-0">audiophile</div>
 
           <nav>
-            <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 text-sm font-bold tracking-wider">
+            <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8 text-sm font-bold tracking-wider">
               <li>
                 <a href="#" className="hover:text-[#D87D4A] transition-colors">
                   HOME

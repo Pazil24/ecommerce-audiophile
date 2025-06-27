@@ -18,8 +18,8 @@ const Navigation = ({ className = "", style = {}, showBorder = true }) => {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-20">
           <div className="flex items-center justify-between h-20">
-            {/* Mobile Hamburger Menu */}
-            <div className="md:hidden">
+            {/* Mobile Hamburger Menu - Only show on mobile, not tablet */}
+            <div className="sm:hidden">
               <button
                 onClick={toggleMobileMenu}
                 className="text-white hover:text-[#D87D4A] transition-colors"
@@ -50,8 +50,8 @@ const Navigation = ({ className = "", style = {}, showBorder = true }) => {
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex space-x-8 text-sm font-bold tracking-wider">
+            {/* Desktop & Tablet Navigation */}
+            <ul className="hidden sm:flex space-x-6 md:space-x-8 text-sm font-bold tracking-wider">
               <li>
                 <Link to="/" className="hover:text-[#D87D4A] transition-colors">
                   HOME
@@ -124,9 +124,9 @@ const Navigation = ({ className = "", style = {}, showBorder = true }) => {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Only show on mobile */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-30 md:hidden">
+        <div className="fixed inset-0 z-30 sm:hidden">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black bg-opacity-50"
